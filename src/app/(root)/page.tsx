@@ -1,9 +1,7 @@
-import { Button } from "@/components/ui/button";
-
 import ProjectsForm from "@/modules/home/components/project-form";
 import ProjectList from "@/modules/home/components/project-list";
-import Image from "next/image";
 import React from "react";
+import { Logo } from "@/components/logo";
 
 const Page = () => {
   return (
@@ -11,16 +9,13 @@ const Page = () => {
       <div className="max-w-5xl w-full">
         <section className="space-y-8 flex flex-col items-center">
           <div className="flex flex-col items-center">
-            <Image
-              src={"/logo.svg"}
-              width={100}
-              height={100}
-              alt="Logo"
-              className="hidden md:block invert dark:invert-0"
-            />
+            <Logo className="h-12 w-auto md:h-16 text-foreground" />
           </div>
-          <h1 className="text-2xl md:text-5xl font-bold text-center">
-            Build Something with 💓
+          <h1 className="text-2xl md:text-5xl lg:text-6xl font-bold text-center tracking-tight text-balance">
+            Build Something with{" "}
+            <span className="bg-gradient-to-r from-primary via-primary to-foreground bg-clip-text text-transparent drop-shadow-sm">
+              Venthen Build
+            </span>
           </h1>
 
           <p className="text-lg md:text-xl text-muted-foreground text-center">
@@ -30,7 +25,7 @@ const Page = () => {
           <div className="max-w-3xl w-full">
             <ProjectsForm />
           </div>
-          <ProjectList />
+          {/* <ProjectList /> */}
         </section>
       </div>
     </div>

@@ -1,5 +1,5 @@
 "use client";
-import { useGetProjects } from "@/modules/projects/hooks/project";
+// import { useGetProjects } from "@/modules/projects/hooks/project";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import {
@@ -9,7 +9,6 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { FolderKanban, Calendar, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import React from "react";
 import Link from "next/link";
@@ -60,9 +59,9 @@ const ProjectList = () => {
               <CardHeader className="pb-3">
                 <div className="flex items-start justify-between mb-3">
                   <div className="p-2.5 bg-emerald-500/10 rounded-lg group-hover:bg-emerald-500/20 transition-colors">
-                    <FolderKanban className="w-5 h-5 text-emerald-500" />
+                    <Image src="/png_icons/icons8-folder-94.png" alt="Project" width={20} height={20} className="w-5 h-5" />
                   </div>
-                  <ArrowRight className="w-4 h-4 text-zinc-500 group-hover:text-emerald-500 group-hover:translate-x-1 transition-all" />
+                  <Image src="/png_icons/icons8-forward-arrow-50.png" alt="Open project" width={16} height={16} className="w-4 h-4 opacity-70 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
                 </div>
                 <CardTitle className="text-lg text-zinc-100 group-hover:text-emerald-400 transition-colors line-clamp-1">
                   {project.name}
@@ -70,7 +69,7 @@ const ProjectList = () => {
               </CardHeader>
               <CardContent>
                 <div className="flex items-center text-sm text-zinc-400">
-                  <Calendar className="w-3.5 h-3.5 mr-2" />
+                  <Image src="/png_icons/icons8-calendar-94.png" alt="Created" width={16} height={16} className="w-4 h-4 mr-2" />
                   <span>{formatDate(project.createdAt)}</span>
                 </div>
               </CardContent>
@@ -95,9 +94,9 @@ const ProjectList = () => {
                     <CardHeader className="pb-3">
                       <div className="flex items-start justify-between mb-3">
                         <div className="p-2.5 bg-emerald-500/10 rounded-lg group-hover:bg-emerald-500/20 transition-colors">
-                          <FolderKanban className="w-5 h-5 text-emerald-500" />
+                          <Image src="/png_icons/icons8-folder-94.png" alt="Project" width={20} height={20} className="w-5 h-5" />
                         </div>
-                        <ArrowRight className="w-4 h-4 text-zinc-500 group-hover:text-emerald-500 group-hover:translate-x-1 transition-all" />
+                        <Image src="/png_icons/icons8-forward-arrow-50.png" alt="Open project" width={16} height={16} className="w-4 h-4 opacity-70 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
                       </div>
                       <CardTitle className="text-lg text-zinc-100 group-hover:text-emerald-400 transition-colors line-clamp-1">
                         {project.name}
@@ -105,7 +104,7 @@ const ProjectList = () => {
                     </CardHeader>
                     <CardContent>
                       <div className="flex items-center text-sm text-zinc-400">
-                        <Calendar className="w-3.5 h-3.5 mr-2" />
+                        <Image src="/png_icons/icons8-calendar-94.png" alt="Created" width={16} height={16} className="w-4 h-4 mr-2" />
                         <span>{formatDate(project.createdAt)}</span>
                       </div>
                     </CardContent>
