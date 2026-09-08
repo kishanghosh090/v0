@@ -105,7 +105,7 @@ const ProjectsForm = () => {
     }
   };
 
-  // const isButtonDisabled = isPending || !form.watch("content").trim();
+  const isButtonDisabled = false;
 
   return (
     <div className="space-y-8">
@@ -197,12 +197,12 @@ const ProjectsForm = () => {
             <Button
               className={cn(
                 "size-8 rounded-full",
-                // isButtonDisabled && "bg-muted-foreground border",
+                isButtonDisabled && "bg-muted-foreground border",
               )}
-              // disabled={isButtonDisabled}
+              disabled={isButtonDisabled}
               type="submit"
             >
-              {/* {isPending ? (
+              {false ? (
                 <Spinner />
               ) : (
                 <Image
@@ -212,7 +212,7 @@ const ProjectsForm = () => {
                   height={16}
                   className="size-4"
                 />
-              )} */}
+              )}
             </Button>
           </div>
         </form>
