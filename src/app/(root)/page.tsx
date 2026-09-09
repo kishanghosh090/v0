@@ -1,11 +1,22 @@
+"use client";
 import ProjectsForm from "@/modules/home/components/project-form";
 import ProjectList from "@/modules/home/components/project-list";
 import React from "react";
 import { Logo } from "@/components/logo";
+import { Button } from "@/components/ui/button";
+import { inngest } from "@/inngest/client";
+import { onInvoke } from "@/modules/home/actions";
 
 const Page = () => {
   return (
     <div className="flex items-center justify-center w-full px-4 py-8">
+      <Button
+        onClick={() => {
+          onInvoke();
+        }}
+      >
+        Invoke Ai Agent
+      </Button>
       <div className="max-w-5xl w-full">
         <section className="space-y-8 flex flex-col items-center">
           <div className="flex flex-col items-center">
