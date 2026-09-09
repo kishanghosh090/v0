@@ -1,10 +1,8 @@
 "use client";
+
 import ProjectsForm from "@/modules/home/components/project-form";
-import ProjectList from "@/modules/home/components/project-list";
-import React from "react";
 import { Logo } from "@/components/logo";
 import { Button } from "@/components/ui/button";
-import { inngest } from "@/inngest/client";
 import { onInvoke } from "@/modules/home/actions";
 
 const Page = () => {

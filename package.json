@@ -20,6 +20,7 @@
     "cmdk": "^1.1.1",
     "cn": "^0.2.6",
     "date-fns": "^4.4.0",
+    "e2b": "^2.49.0",
     "embla-carousel-react": "^8.6.0",
     "inngest": "^4.20.0",
     "input-otp": "^1.5.0",
@@ -50,7 +51,7 @@
     "eslint-config-next": "16.3.4",
     "install": "^0.13.0",
     "npm": "^11.19.1",
-    "prisma": "^6.19.3",
+    "prisma": "^6.12.0",
     "tailwindcss": "^4",
     "tsx": "^4.23.13",
     "typescript": "^5"
