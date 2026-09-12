@@ -2,6 +2,7 @@
 
 import ProjectsForm from "@/modules/home/components/project-form";
 import { Logo } from "@/components/logo";
+import ProjectList from "@/modules/home/components/project-list";
 
 const Page = () => {
   return (
@@ -25,7 +26,7 @@ const Page = () => {
           <div className="max-w-3xl w-full">
             <ProjectsForm />
           </div>
-          {/* <ProjectList /> */}
+          <ProjectList />
         </section>
       </div>
     </div>
