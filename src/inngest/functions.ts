@@ -27,9 +27,9 @@ export const codeAgentFunction = inngest.createFunction(
       name: "code-agent",
       description: "An expert coding agent",
       system: PROMPT,
-      model: gemini({
-        model: "gemini-3.1-pro-preview",
-        apiKey: process.env.GEMINI_API_KEY!,
+      model: openai({
+        model: "gpt-3.5-turbo",
+        apiKey: process.env.OPENAI_API_KEY!,
       }),
       tools: [
         // 1. Terminal

@@ -12,14 +12,25 @@ datasource db {
   provider = "postgresql"
 }
 
-
-model User { 
-  id    Int     @id @default(autoincrement()) 
-  email String  @unique
-  name  String?
-  image String?
-  clerkId String @unique
+model User {
+  id       String    @id @default(cuid())
+  email    String    @unique
+  name     String?
+  image    String?
+  clerkId  String    @unique
+  projects Project[]
 
   created_at DateTime @default(now())
   updated_at DateTime @default(now())
-} 
+}
+
+model Project {
+  id   String @id @default(cuid())
+  name String
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+}
