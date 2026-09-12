@@ -2,19 +2,10 @@
 
 import ProjectsForm from "@/modules/home/components/project-form";
 import { Logo } from "@/components/logo";
-import { Button } from "@/components/ui/button";
-import { onInvoke } from "@/modules/home/actions";
 
 const Page = () => {
   return (
     <div className="flex items-center justify-center w-full px-4 py-8">
-      <Button
-        onClick={() => {
-          onInvoke();
-        }}
-      >
-        Invoke Ai Agent
-      </Button>
       <div className="max-w-5xl w-full">
         <section className="space-y-8 flex flex-col items-center">
           <div className="flex flex-col items-center">

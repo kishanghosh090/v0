@@ -5,6 +5,7 @@ import {
   createTool,
   createNetwork,
   createState,
+  openai,
 } from "@inngest/agent-kit";
 import Sandbox from "e2b";
 import z from "zod";
@@ -63,7 +64,7 @@ export const codeAgentFunction = inngest.createFunction(
       name: "code-agent",
       description: "An expert coding agent",
       system: PROMPT,
-      model: gemini({ model: "gemini-2.5-flash" }),
+      model: openai({ model: "gpt-3.5-turbo" }),
       tools: [
         // 1. Terminal
         createTool({
@@ -206,14 +207,14 @@ export const codeAgentFunction = inngest.createFunction(
       name: "fragment-title-generator",
       description: "Generate a title for the fragment",
       system: FRAGMENT_TITLE_PROMPT,
-      model: gemini({ model: "gemini-2.5-flash" }),
+      model: openai({ model: "gpt-3.5-turbo" }),
     });
 
     const responseGenerator = createAgent({
       name: "response-generator",
       description: "Generate a response for the fragment",
       system: RESPONSE_PROMPT,
-      model: gemini({ model: "gemini-2.5-flash" }),
+      model: openai({ model: "gpt-3.5-turbo" }),
     });
 
     const { output: fragmentTitleOutput } = await fragmentTitleGenerator.run(

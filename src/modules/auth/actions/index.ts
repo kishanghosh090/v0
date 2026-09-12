@@ -27,7 +27,7 @@ export const onBoardUser = async () => {
     const newUser = await db.user.upsert({
       where: {
         // Fall back to matching by ID, email, or a dummy string if neither exists
-        id: existingUser?.id,
+        id: existingUser?.id || "",
       },
       update: {
         clerkId: id,
