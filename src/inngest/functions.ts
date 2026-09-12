@@ -64,7 +64,7 @@ export const codeAgentFunction = inngest.createFunction(
       name: "code-agent",
       description: "An expert coding agent",
       system: PROMPT,
-      model: openai({ model: "gpt-3.5-turbo" }),
+      model: openai({ model: "gpt-4o-mini" }),
       tools: [
         // 1. Terminal
         createTool({
@@ -81,6 +81,8 @@ export const codeAgentFunction = inngest.createFunction(
                 const sandbox = await Sandbox.connect(sandboxId);
 
                 const result = await sandbox.commands.run(command, {
+                  cwd: "/home/user",
+
                   onStdout: (data) => {
                     buffers.stdout += data;
                   },
@@ -207,14 +209,14 @@ export const codeAgentFunction = inngest.createFunction(
       name: "fragment-title-generator",
       description: "Generate a title for the fragment",
       system: FRAGMENT_TITLE_PROMPT,
-      model: openai({ model: "gpt-3.5-turbo" }),
+      model: openai({ model: "gpt-4.1-mini" }),
     });
 
     const responseGenerator = createAgent({
       name: "response-generator",
       description: "Generate a response for the fragment",
       system: RESPONSE_PROMPT,
-      model: openai({ model: "gpt-3.5-turbo" }),
+      model: openai({ model: "gpt-4.1-mini" }),
     });
 
     const { output: fragmentTitleOutput } = await fragmentTitleGenerator.run(

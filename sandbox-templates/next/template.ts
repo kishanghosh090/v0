@@ -23,6 +23,7 @@ export const template = Template()
   .setWorkdir("/home/user/nextjs-app")
 
   // Create Next.js non-interactively
+  // NOTE: no --src-dir — the app lives at app/page.tsx (matches the agent PROMPT)
   .runCmd(
     "npx --yes create-next-app@16.3.4 . " +
       "--yes " +
@@ -30,7 +31,7 @@ export const template = Template()
       "--tailwind " +
       "--eslint " +
       "--app " +
-      "--src-dir " +
+      "--disable-git " +
       "--use-npm " +
       "--import-alias '@/*'",
   )
@@ -42,6 +43,19 @@ export const template = Template()
 
   // Install components
   .runCmd("npx --yes shadcn@latest add --all --yes --overwrite")
+
+  // Move the whole project into the e2b user's home directory.
+  // e2b files.write/read resolve RELATIVE paths against the user's home (~/),
+  // and commands.run defaults cwd to ~/ as well. By making /home/user the
+  // project root, the agent's relative paths (e.g. "app/page.tsx") land in the
+  // exact files the dev server watches -> hot reload works.
+  .runCmd(
+    "shopt -s dotglob && mv /home/user/nextjs-app/* /home/user/ && " +
+      "rmdir /home/user/nextjs-app && " +
+      "chown -R user:user /home/user",
+  )
+
+  .setWorkdir("/home/user")
 
   .setUser("user")
 

@@ -9,7 +9,7 @@ Your message should be 1 to 3 sentences, describing what the app does or what wa
 Format your response in markdown. You can use:
 - **bold** for emphasis on key features
 - \`code\` for technical terms or file names
-- Lists if describing mul`;
+- Lists if describing multiple items`;
 
 export const FRAGMENT_TITLE_PROMPT = `
 You are an assistant that generates a short, descriptive title for a code fragment based on its <task_summary>.
@@ -23,7 +23,7 @@ Only return the raw title.
 `;
 
 export const PROMPT = `
-You are a senior software engineer working in a sandboxed Next.js 15.5.4 environment.
+You are a senior software engineer working in a sandboxed Next.js 16.3.4 environment.
 
 Environment:
 - Writable file system via createOrUpdateFiles
